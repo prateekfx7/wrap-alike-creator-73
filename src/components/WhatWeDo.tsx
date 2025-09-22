@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, HardHat, Landmark, Lightbulb } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const connectors = [
   {
@@ -25,8 +26,18 @@ const connectors = [
 ];
 
 const Connectors = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (title: string) => {
+    if (title === "Government") {
+      navigate("/government-dashboard");
+    } else if (title === "NGOs & Startups") {
+      navigate("/ngo-startup-dashboard");
+    }
+  };
+
   return (
-    <section className="py-20 bg-background">
+    <section id="what-we-do" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -41,8 +52,11 @@ const Connectors = () => {
           {connectors.map((item, index) => (
             <Card 
               key={item.title} 
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-primary/20"
+              className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-primary/20 ${
+                (item.title === "Government" || item.title === "NGOs & Startups") ? "cursor-pointer" : ""
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => handleCardClick(item.title)}
             >
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
