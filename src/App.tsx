@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import GovernmentDashboard from "./pages/GovernmentDashboard";
 import NgoStartupDashboard from "./pages/NgoStartupDashboard";
+import WorkerDashboard from "./pages/WorkerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/government-dashboard" element={<GovernmentDashboard />} />
           <Route path="/ngo-startup-dashboard" element={<NgoStartupDashboard />} />
+          <Route path="/worker-dashboard" element={<WorkerDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

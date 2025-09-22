@@ -37,6 +37,9 @@ const Header = () => {
                 <DropdownMenuItem onClick={() => navigate("/ngo-startup-dashboard")}>
                   NGO & Startup Dashboard
                 </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate("/worker-dashboard")}>
+                  Worker Dashboard
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">

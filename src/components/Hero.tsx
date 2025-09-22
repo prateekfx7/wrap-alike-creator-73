@@ -38,7 +38,7 @@ const WrapUp = () => {
 
         <div className="flex justify-center gap-6 mb-8">
           <HoverShadowButton text="Citizen Dashboard" link="https://wrap-up-by-nullpointer.vercel.app/" />
-          <HoverShadowButton text="Worker Dashboard" link="https://worker-dashboard-wrap-up.vercel.app/" />
+          <HoverShadowButton text="Worker Dashboard" link="/worker-dashboard" />
         </div>
 
         <ChevronDown className="w-10 h-10 text-white mx-auto animate-bounce" />
